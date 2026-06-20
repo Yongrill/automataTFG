@@ -1,0 +1,58 @@
+# Build outputs
+target/
+*.class
+*.jar
+*.war
+
+# Frontend dependencies and build outputs
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+
+# Logs and local runtime files
+*.log
+logs/
+logs.txt
+output.log
+spring_output.log
+err.txt
+cp.txt
+temp.sql
+
+# Local databases and generated data
+db/
+*.db
+*.mv.db
+*.trace.db
+
+# Local environment files
+.env
+.env.*
+!.env.example
+src/main/resources/application-local.properties
+
+# IDE and OS files
+.classpath
+.project
+.settings/
+.vscode/
+.idea/
+.sixth/
+.DS_Store
+Thumbs.db
+
+# LaTeX/document generated files, if documentation is added later
+*.aux
+*.log
+*.toc
+*.lof
+*.lot
+*.lol
+*.gls
+*.glo
+*.glg
+*.ist
+*.alg
+*.acr
+*.acn
+*.pdf

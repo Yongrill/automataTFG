@@ -1,0 +1,38 @@
+.git
+.gitignore
+.gitattributes
+
+# Backend build output
+target/
+*.class
+*.jar
+*.war
+
+# Frontend local files
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+
+# Local files
+.env
+.env.*
+!.env.example
+db/
+logs/
+*.log
+*.tmp
+
+# IDE and OS files
+.classpath
+.project
+.settings/
+.vscode/
+.idea/
+.sixth/
+.DS_Store
+Thumbs.db
+
+# Documentation/generated artifacts not needed for image build
+docs/
+*.pdf
+*.zip
