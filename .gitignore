@@ -40,19 +40,3 @@ src/main/resources/application-local.properties
 .sixth/
 .DS_Store
 Thumbs.db
-
-# LaTeX/document generated files, if documentation is added later
-*.aux
-*.log
-*.toc
-*.lof
-*.lot
-*.lol
-*.gls
-*.glo
-*.glg
-*.ist
-*.alg
-*.acr
-*.acn
-*.pdf
