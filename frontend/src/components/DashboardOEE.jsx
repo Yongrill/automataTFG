@@ -577,7 +577,7 @@ export default function DashboardOEE({ initialBonoId }) {
                 </div>
                 <div className="mt-4 text-center w-full">
                   <p className="text-sm text-gray-400">Total SCADA: <span className="text-white font-mono">{oeeData.minutosTotalesAutomata.toFixed(1)}</span></p>
-                  <p className="text-sm text-gray-400">Auto (\u2248 Dispo): <span className="text-blue-400 font-mono">{oeeData.minutosEnAutomatico.toFixed(1)}</span></p>
+                  <p className="text-sm text-gray-400">Auto (≈ Dispo): <span className="text-blue-400 font-mono">{oeeData.minutosEnAutomatico.toFixed(1)}</span></p>
                 </div>
               </div>
             </div>

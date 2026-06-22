@@ -116,7 +116,14 @@
 <version>2.7.18</version>
 <scope>test</scope>
 </dependency>
-</dependencies>
+
+		<!-- Swagger / OpenAPI 3 -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.15</version>
+		</dependency>
+	</dependencies>
 
 	<dependencyManagement>
 		<dependencies>

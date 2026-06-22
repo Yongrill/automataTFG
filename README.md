@@ -8,11 +8,12 @@ El proyecto centraliza datos de produccion, estados de maquina, fichajes y metri
 
 ## Tecnologias
 
-- Java 11 y Spring Boot
-- Spring Data JPA
-- H2 en modo portable
-- SQL Server para despliegues privados
-- React y Vite
+- Java 11 y Spring Boot (v2.7.18)
+- Spring Data JPA (Hibernate v5.6.15.Final)
+- H2 (v2.1.214) en modo portable
+- SQL Server 2017 (Standard Edition)
+- React (v19.2.5) y Vite (v8.0.9)
+- TailwindCSS (v4.2.2) y Chart.js (v4.5.1)
 - Nginx como servidor del frontend
 - Docker Compose
 
@@ -39,6 +40,13 @@ Parada:
 ```powershell
 docker compose down
 ```
+
+## API y Swagger
+
+El proyecto incluye documentación interactiva de la API REST mediante Swagger/OpenAPI. Una vez arrancado el backend, puedes explorar y probar los endpoints disponibles accediendo a:
+
+- **Swagger UI:** [http://localhost:8084/swagger-ui/index.html](http://localhost:8084/swagger-ui/index.html)
+- **OpenAPI JSON:** [http://localhost:8084/v3/api-docs](http://localhost:8084/v3/api-docs)
 
 ## Datos demo
 

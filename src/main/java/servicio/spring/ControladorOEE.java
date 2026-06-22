@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import produccion.repositorio.RepositorioOrdenProduccionViewAdHoc;
 import repositorio.spring.OEEBonoResumenRepository;
 import scada.modelo.OEEBonoResumen;
@@ -19,6 +21,7 @@ import servicio.spring.dto.ReporteOEEDTO;
 
 @RestController
 @RequestMapping("/api/oee")
+@Tag(name = "OEE y Rendimiento", description = "Endpoints para el cálculo y consulta de la eficiencia general de los equipos (OEE)")
 public class ControladorOEE {
 
     private final IServicioOEE servicioOEE;
@@ -36,11 +39,13 @@ public class ControladorOEE {
         this.portableProfile = Arrays.asList(environment.getActiveProfiles()).contains("portable");
     }
 
+    @Operation(summary = "Listar resumen general", description = "Devuelve el resumen de OEE de todos los bonos registrados")
     @GetMapping("/resumen")
     public List<OEEBonoResumen> getAllOeeResumen() {
         return oeeRepository.findAll();
     }
 
+    @Operation(summary = "Calcular OEE por Bono", description = "Calcula y devuelve las métricas OEE para un identificador de bono específico")
     @GetMapping("/bono/{idDocBono}")
     public ResponseEntity<ReporteOEEDTO> getOeePorBono(@PathVariable String idDocBono) {
         if (portableProfile) {
@@ -74,6 +79,7 @@ public class ControladorOEE {
         return ResponseEntity.ok(r);
     }
     
+    @Operation(summary = "Calcular OEE por Orden de Producción", description = "Recupera los bonos asociados a una orden y calcula sus métricas OEE")
     @GetMapping("/orden/{idOrden}")
     public List<ReporteOEEDTO> getOeePorOrden(@PathVariable Long idOrden) {
         if (portableProfile) {
@@ -105,6 +111,7 @@ public class ControladorOEE {
         return result;
     }
 
+    @Operation(summary = "Consultar OEE por Máquina", description = "Devuelve el rendimiento histórico OEE de los bonos procesados en una máquina concreta")
     @GetMapping("/maquina/{idMaquina}")
     public List<ReporteOEEDTO> getOeePorMaquina(@PathVariable String idMaquina) {
         if (portableProfile) {
